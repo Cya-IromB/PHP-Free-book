@@ -21,7 +21,67 @@
   </ul>
 
   <h2>繰り返し</h2>
+  <p>※ぶっちゃけやらなくてよさそう</p>
+  <p>でもend-forとend-whileはPHP固有だよね。</p>
+
+  <h2>配列</h2>
+  <p>構文</p>
+  <pre><code>
+  $item[] = "やくそう";
+  $item[] = "つるぎ";
+  $item[] = "ガキ";
+
+  echo $item[0];
+  </code></pre>
+
+  </figure>
+  <p>↓</p>
+  <?php
+  $item[] = "やくそう";
+  $item[] = "つるぎ";
+  $item[] = "ガキ";
+
+  echo $item[2];
+  ?>
+
+  <p>(関係ないけどhtmlに&lt;pre&gt;っていう便利なタグがあるのね…)</p>
+
+  <p>array()関数</p>
+  <pre><code>
+    $変数名 = array(1,2,3,4,5);
+    echo $変数名;
+  </code></pre>
+  <p>↓</p>
+  <?php
+    $変数名 = array(55,12,33,44,45);
+    echo $変数名[2];
+  ?>
+
+  <p>count()で要素数を取得できる</p>
+  <pre><code>
+  for($i = 0; $i <= count($変数名); $i++){
+    echo $変数名[$i];
+  }
+  </code></pre>
+  <p>↓</p>
+  <?php
+    for($i = 0; $i < count($変数名); $i++){
+      echo '<p>'.$変数名[$i].'</p>';
+    }
+  ?>
+
+  <p>まぁいわゆるlength的な。</p>
+
+  <p>mb_strlen()test</p>
+  <?php
+    $str = "あいうえお";
+    echo mb_strlen($str);
+  ?>
+
+  <p>---------------------------------------------</p>
+
   
+
 
   </body>
 </html>
