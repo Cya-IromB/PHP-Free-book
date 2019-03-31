@@ -46,7 +46,7 @@
 
   <p>(関係ないけどhtmlに&lt;pre&gt;っていう便利なタグがあるのね…)</p>
 
-  <p>array()関数</p>
+  <h3>array()関数</h3>
   <pre><code>
     $変数名 = array(1,2,3,4,5);
     echo $変数名;
@@ -57,7 +57,7 @@
     echo $変数名[2];
   ?>
 
-  <p>count()で要素数を取得できる</p>
+  <h3>count()で要素数を取得できる</h3>
   <pre><code>
   for($i = 0; $i <= count($変数名); $i++){
     echo $変数名[$i];
@@ -78,10 +78,20 @@
     echo mb_strlen($str);
   ?>
 
-  <p>---------------------------------------------</p>
+  <h3>foreach</h3>
+  <p>asを使う</p>
+  <pre><code>
+  foreach($変数名 as $val){
+    echo $val;
+  }
+  </code></pre>
 
-  
+  <?php
+    foreach($変数名 as $val){
+      echo $val.'<br />';
+    }
+  ?>
 
-
+  <p>end-foreachもあるけど割愛</p>
   </body>
 </html>
