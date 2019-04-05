@@ -10,3 +10,22 @@ h3{
   font-size: 20px;
   color: #0c0;
 }
+
+pre{
+  background: rgba(16, 16, 32, 0.9);
+  color: #0f0;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  border: ridge 4px #ddd;
+  /*width:auto;*/
+}
+
+.phpOutput{
+  background: rgba(16, 16, 32, 0.9);
+  color: #0ff;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  border: ridge 4px #ddd;
+}
