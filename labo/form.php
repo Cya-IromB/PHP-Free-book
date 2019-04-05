@@ -59,7 +59,38 @@
      ?>
      </div>
 
+    <p>$_POST等は中身を直接買えるのは厳禁で、基本的に参照するだけに留めること。</p>
+    <p>また、$_POSTや$_GET等の文字列を表示する場合、悪意あるhtmlやJSを変換する必要がある。</p>
+    <ul>
+      <li>htmlspecialchars($_POST['xxx']) -> 「<>&"」を変換してくれる。</li>
+      <li>htmlspecialchars($_POST['xxx'],ENT_QUOTES) -> 上記に加え「&#39」を変換してくれる。</li>
+      <li>nl2br($_POST['comment']) -> 改行文字を&lt;br /&gt;に変えてくれる。</li>
+      <li>stripslashes($_POST['xxx']) -> エスケープ文字をすべてカット。</li>
+      <li>addslashes($_POST['xxx']) -> ぜんぶエスケープしてくれる。</li>
+    </ul>
 
+    <h2>ファイルのアップロード</h2>
+    <form action="form.php" method="post" enctype="multipart/form-data">
+      ここにファイルを上げてね！<br />
+      <input type="file" name="upfile" size=30  accept="image/*"><br />
+      <input type="submit" value="そーめん">
+    </form>
 
+    <div class='upFile'>
+      <?php
+        if(is_uploaded_file($_FILES['upfile']['tmp_name'])){
+          if(move_uploaded_file($_FILES['upfile']['tmp_name'],'img_labo/'.$_FILES['upfile']['name'])){
+            //パーミッション設定
+            chmod('img_labo/'.$_FILES['upfile']['name'],0644);
+            echo $_FILES['upfile']['name'].'をアップロードしたぞッ！！<br />';
+            echo '<img src='.'"img_labo/'.$_FILES['upfile']['name'].'">';
+          }else{
+            echo 'アップロードできない…';
+          }
+        }else{
+          echo 'ファイルが選択されていないッ！！';
+        }
+      ?>
+    </div>
   </body>
 </html>

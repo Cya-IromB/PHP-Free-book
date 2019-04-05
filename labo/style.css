@@ -29,3 +29,8 @@ pre{
   padding: 5px;
   border: ridge 4px #ddd;
 }
+.upFile{
+  background: #222222;
+  border: ridge 4px #ddd;
+  color:#0e0;
+}
