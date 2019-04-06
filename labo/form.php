@@ -78,19 +78,9 @@
 
     <div class='upFile'>
       <?php
-        if(is_uploaded_file($_FILES['upfile']['tmp_name'])){
-          if(move_uploaded_file($_FILES['upfile']['tmp_name'],'img_labo/'.$_FILES['upfile']['name'])){
-            //パーミッション設定
-            chmod('img_labo/'.$_FILES['upfile']['name'],0644);
-            echo $_FILES['upfile']['name'].'をアップロードしたぞッ！！<br />';
-            echo '<img src='.'"img_labo/'.$_FILES['upfile']['name'].'">';
-          }else{
-            echo 'アップロードできない…';
-          }
-        }else{
-          echo 'ファイルが選択されていないッ！！';
-        }
+      require('kit_upload.php');
       ?>
     </div>
+    <p>ok?</p>
   </body>
 </html>
