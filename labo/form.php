@@ -8,6 +8,7 @@
   </head>
 
   <body>
+    <div id="bg1"></div>
     <form action="form.php" method="post">
       名前: <br>
       <input type="text" name="userName" size="30" value="" placeholder=""><br />
@@ -16,7 +17,7 @@
       コメントをどうぞ！: <br>
       <textarea name="comment"  cols="30" rows="10"></textarea><br />
       <br />
-      <input type="submit" value="押せええええええええええ！！！" />
+      <input type="submit" value="押せええええええええええ！！！"  class="linktag">
     </form>
 
     <p>上のフォームは連想配列$_POSTへ格納される。</p>
@@ -34,7 +35,7 @@
 
     <br>
 
-    <div class="phpOutput">
+    <div class="photoFrame">
     <?php
     if(!empty($_POST)){
       echo '<p>POST======================================</p>';
@@ -70,17 +71,26 @@
     </ul>
 
     <h2>ファイルのアップロード</h2>
-    <form action="form.php" method="post" enctype="multipart/form-data">
+    <form action="zikken.php" method="post" enctype="multipart/form-data">
       ここにファイルを上げてね！<br />
-      <input type="file" name="upfile" size=30  accept="image/*"><br />
-      <input type="submit" value="そーめん">
+      <input type="file"  value="このボタンにファイルを重ねても投稿できます。" name="upfile" size=30  accept="image/*" class="linktag"><br />
+      <input type="submit" value="そーめん" class="linktag">
     </form>
 
-    <div class='upFile'>
-      <?php
-      require('kit_upload.php');
-      ?>
-    </div>
     <p>ok?</p>
+
+    <p>-つかったもの-</p>
+    <ul>
+      <li>isset() -> そもそもこの変数ある？</li>
+      <li>is_uploaded_file($_FILES['formタグのname']['tmp_name']) -> アップロードされたファイルはここに入ってる？</li>
+      <li>move_uploaded_file($_FILES['formタグのname']['tmp_name'],'移動先のパス') -> ファイルを移動する。成功するとtrueを返す。</li>
+      <li>chmod('対象ファイルのあるディレクトリのパス'.$_FILES['formタグのname']['name'],0xxx) -> パーミッション変更</li>
+    </ul>
+
+    
+
+
+
+
   </body>
 </html>

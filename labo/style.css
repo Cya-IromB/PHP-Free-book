@@ -1,10 +1,17 @@
+body{
+  color: #eee;
+  background-image: url('img_system/bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 h1{
   font-size: 36px;
   color: #ccf;
 }
 h2{
   font-size: 30px;
-  color: #c00;
+  color: #0cc;
 }
 h3{
   font-size: 20px;
@@ -21,18 +28,20 @@ pre{
   /*width:auto;*/
 }
 
-.phpOutput{
-  background: rgba(16, 16, 32, 0.9);
-  color: #0ff;
-  display: inline-block;
-  margin: 10px;
-  padding: 5px;
-  border: ridge 4px #ddd;
-}
-.upFile{
+
+.photoFrame{
   background: rgba(32,32,32,0.8);
   border: ridge 4px #ddd;
   color:#0e0;
   display: inline-block;
   padding: 10px;
+}
+
+.linktag{
+  background: rgba(32,32,32,0.8);
+  border: ridge 2px #fff;
+  color: #0ff;
+  display: inline-block;
+  padding: 2px;
+  cursor: pointer;
 }
