@@ -10,6 +10,7 @@
   if(!mb_send_mail('メールアドレス',$_POST['subject'],$mail_msg,'From:'.$_POST['userAddress'])){
     exit('メールの送信に失敗しました！');
   }
+  
 ?>
 <!DOCTYPE html>
 <html lang="ja">
